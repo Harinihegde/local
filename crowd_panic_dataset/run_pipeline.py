@@ -55,12 +55,12 @@ def clip_features(path, detector, n=48):
         prior_gray=gray; i+=1
     cap.release(); out={"sampled_frames":len(counts),"fps":fps,"width":width,"height":height}; out.update(summarize(counts,"people")); out.update(summarize(mags,"flow")); out.update(summarize(coherences,"coherence")); out.update(summarize(speeds,"speed")); return out
 
-def make_detector(weights):
+def make_detector(weights, imgsz=640):
     if not weights: raise ValueError("--weights is required: the program will not silently download a detector")
     from ultralytics import YOLO
     model=YOLO(weights)
     def detect(frame):
-        r=model(frame,classes=[0],conf=.25,verbose=False)[0]
+        r=model(frame,classes=[0],conf=.25,imgsz=imgsz,verbose=False)[0]
         return r.boxes.xyxy.cpu().numpy() if r.boxes is not None else np.empty((0,4))
     return detect
 
@@ -77,7 +77,7 @@ def fit_predict(train, test):
     model.fit(train[cols].fillna(0),train.label); return model.predict(test[cols].fillna(0))
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--dataset",type=Path,required=True); ap.add_argument("--output",type=Path,default=Path("outputs")); ap.add_argument("--weights"); ap.add_argument("--sample-frames",type=int,default=48); ap.add_argument("--inventory-only",action="store_true"); ap.add_argument("--reuse-features",action="store_true"); a=ap.parse_args(); a.output.mkdir(parents=True,exist_ok=True)
+    ap=argparse.ArgumentParser(); ap.add_argument("--dataset",type=Path,required=True); ap.add_argument("--output",type=Path,default=Path("outputs")); ap.add_argument("--weights"); ap.add_argument("--sample-frames",type=int,default=48); ap.add_argument("--imgsz",type=int,default=640); ap.add_argument("--inventory-only",action="store_true"); ap.add_argument("--reuse-features",action="store_true"); a=ap.parse_args(); a.output.mkdir(parents=True,exist_ok=True)
     manifest_path=a.output/"split_manifest.csv"
     if manifest_path.exists(): manifest=pd.read_csv(manifest_path)
     else:
@@ -87,7 +87,7 @@ def main():
     fp=a.output/"clip_features.csv"
     if a.reuse_features and fp.exists(): features=pd.read_csv(fp)
     else:
-        detector=make_detector(a.weights); rows=[]
+        detector=make_detector(a.weights,a.imgsz); rows=[]
         for j,row in manifest.reset_index(drop=True).iterrows(): rows.append(dict(path=row.path,label=row.label,split=row.split,**clip_features(row.path,detector,a.sample_frames))); print(f"features: {j+1}/{len(manifest)}",flush=True)
         features=pd.DataFrame(rows); features.to_csv(fp,index=False)
     train=features[features.split=="train"].reset_index(drop=True); test=features[features.split=="test"].reset_index(drop=True); inner,valid=train_test_split(train,test_size=.2,stratify=train.label,random_state=20260714)
