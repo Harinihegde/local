@@ -1,0 +1,7 @@
+,fps,fps,fps,fps,frames,frames,frames,frames,width,width,width,width,height,height,height,height,duration_seconds,duration_seconds,duration_seconds,duration_seconds
+,count,min,median,max,count,min,median,max,count,min,median,max,count,min,median,max,count,min,median,max
+label,,,,,,,,,,,,,,,,,,,,
+Crowdy,159,25.0,30.0,60.0,159,60,150.0,360,159,288,478.0,720,159,360,850.0,1280,159,2.002002002002002,5.0,7.007007007007007
+No Panic,364,23.98,29.97,30.0,364,96,150.0,180,364,478,640.0,640,364,360,360.0,850,364,4.003336113427856,5.005005005005005,7.0
+Normal,526,23.98,29.97,30.0,526,100,150.0,180,526,640,640.0,640,526,360,360.0,360,526,4.0,5.0,6.0060060060060065
+Panic,281,15.0,25.0,30.0,281,75,125.0,180,281,270,640.0,848,281,352,360.0,850,281,4.0,5.0,7.005838198498749

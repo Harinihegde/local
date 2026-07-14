@@ -1,0 +1,61 @@
+{
+  "protocol": "single 20% stratified held-out test; option selected only by inner training validation",
+  "candidate_results": [
+    {
+      "option": "16",
+      "validation_accuracy": 0.7323943661971831,
+      "validation_macro_f1": 0.6816185875960871
+    },
+    {
+      "option": "32",
+      "validation_accuracy": 0.7323943661971831,
+      "validation_macro_f1": 0.6816185875960871
+    },
+    {
+      "option": "cross_clip",
+      "validation_accuracy": 0.7370892018779343,
+      "validation_macro_f1": 0.6896100770218229
+    }
+  ],
+  "chosen_option": "cross_clip",
+  "final_test_accuracy": 0.8082706766917294,
+  "per_class": {
+    "Crowdy": {
+      "precision": 0.7647058823529411,
+      "recall": 0.8125,
+      "f1-score": 0.7878787878787878,
+      "support": 32.0
+    },
+    "No Panic": {
+      "precision": 0.7727272727272727,
+      "recall": 0.9315068493150684,
+      "f1-score": 0.84472049689441,
+      "support": 73.0
+    },
+    "Normal": {
+      "precision": 0.8282828282828283,
+      "recall": 0.780952380952381,
+      "f1-score": 0.803921568627451,
+      "support": 105.0
+    },
+    "Panic": {
+      "precision": 0.8666666666666667,
+      "recall": 0.6964285714285714,
+      "f1-score": 0.7722772277227723,
+      "support": 56.0
+    },
+    "accuracy": 0.8082706766917294,
+    "macro avg": {
+      "precision": 0.8080956625074273,
+      "recall": 0.8053469504240052,
+      "f1-score": 0.8021995202808552,
+      "support": 266.0
+    },
+    "weighted avg": {
+      "precision": 0.8134688325090802,
+      "recall": 0.8082706766917294,
+      "f1-score": 0.806526341893875,
+      "support": 266.0
+    }
+  }
+}
