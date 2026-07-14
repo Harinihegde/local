@@ -6,12 +6,13 @@ from pathlib import Path
 import cv2
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.metrics import accuracy_score, classification_report, f1_score
 from sklearn.model_selection import train_test_split
 
 CLASSES = ("No Panic", "Normal", "Crowdy", "Panic")
 BASE = ["people_mean", "people_std", "people_p90", "people_trend", "flow_mean", "flow_std", "flow_p90", "coherence_mean", "coherence_std", "speed_mean", "speed_std"]
+MODEL_FEATURES = BASE + ["flow_trend", "coherence_p90", "coherence_trend", "speed_p90", "speed_trend"]
 
 def inventory(dataset):
     rows=[]
@@ -72,8 +73,8 @@ def enrich(df, normal, option):
     x["anomaly_score"]=z.mean(axis=1); x["anomaly_peak"]=z.max(axis=1); return x
 
 def fit_predict(train, test):
-    cols=BASE+["anomaly_score","anomaly_peak"]
-    model=RandomForestClassifier(n_estimators=400,min_samples_leaf=2,class_weight="balanced",random_state=20260714,n_jobs=-1)
+    cols=MODEL_FEATURES+["anomaly_score","anomaly_peak"]
+    model=ExtraTreesClassifier(n_estimators=500,min_samples_leaf=2,max_features=.8,class_weight="balanced",random_state=20260714,n_jobs=-1)
     model.fit(train[cols].fillna(0),train.label); return model.predict(test[cols].fillna(0))
 
 def main():
