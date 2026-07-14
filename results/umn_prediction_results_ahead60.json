@@ -1,0 +1,95 @@
+{
+  "scene1": {
+    "held_out_scene": "scene1",
+    "GradientBoosting_default": {
+      "precision": 0.9384615384615385,
+      "recall": 0.5083333333333333,
+      "f1": 0.6594594594594595,
+      "tp": 61,
+      "fp": 4,
+      "tn": 1087,
+      "fn": 59
+    },
+    "GradientBoosting_tuned": {
+      "threshold": 0.5,
+      "precision": 0.9384615384615385,
+      "recall": 0.5083333333333333,
+      "f1": 0.6594594594594595,
+      "tp": 61,
+      "fp": 4,
+      "tn": 1087,
+      "fn": 59
+    },
+    "RandomForest_default": {
+      "precision": 1.0,
+      "recall": 0.11666666666666667,
+      "f1": 0.208955223880597,
+      "tp": 14,
+      "fp": 0,
+      "tn": 1091,
+      "fn": 106
+    }
+  },
+  "scene2": {
+    "held_out_scene": "scene2",
+    "GradientBoosting_default": {
+      "precision": 1.0,
+      "recall": 0.06666666666666667,
+      "f1": 0.125,
+      "tp": 24,
+      "fp": 0,
+      "tn": 2908,
+      "fn": 336
+    },
+    "GradientBoosting_tuned": {
+      "threshold": 0.1,
+      "precision": 0.8376068376068376,
+      "recall": 0.2722222222222222,
+      "f1": 0.4109014675052411,
+      "tp": 98,
+      "fp": 19,
+      "tn": 2889,
+      "fn": 262
+    },
+    "RandomForest_default": {
+      "precision": 1.0,
+      "recall": 0.008333333333333333,
+      "f1": 0.01652892561983471,
+      "tp": 3,
+      "fp": 0,
+      "tn": 2908,
+      "fn": 357
+    }
+  },
+  "scene3": {
+    "held_out_scene": "scene3",
+    "GradientBoosting_default": {
+      "precision": 0.09485530546623794,
+      "recall": 0.7421383647798742,
+      "f1": 0.16821097647897362,
+      "tp": 118,
+      "fp": 1126,
+      "tn": 698,
+      "fn": 41
+    },
+    "GradientBoosting_tuned": {
+      "threshold": 0.4,
+      "precision": 0.08701957940536621,
+      "recall": 0.7547169811320755,
+      "f1": 0.15604681404421328,
+      "tp": 120,
+      "fp": 1259,
+      "tn": 565,
+      "fn": 39
+    },
+    "RandomForest_default": {
+      "precision": 0.16352201257861634,
+      "recall": 0.3270440251572327,
+      "f1": 0.2180293501048218,
+      "tp": 52,
+      "fp": 266,
+      "tn": 1558,
+      "fn": 107
+    }
+  }
+}

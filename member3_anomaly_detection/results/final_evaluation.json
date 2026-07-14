@@ -1,0 +1,20 @@
+{
+  "umn_test": {
+    "dataset": "UMN Test",
+    "total_frames": 5568,
+    "anomalies": 267,
+    "anomaly_rate": 0.047952586206896554
+  },
+  "avenue_test": {
+    "dataset": "Avenue Test",
+    "total_frames": 15295,
+    "ground_truth_anomalies": 3695,
+    "predicted_anomalies": 11248,
+    "accuracy": 0.3699248120300752,
+    "precision": 0.23586415362731153,
+    "recall": 0.7179972936400542,
+    "f1_score": 0.3550826473934284,
+    "cohen_kappa": -0.01352845842856909,
+    "auc_roc": 0.5017281041481966
+  }
+}

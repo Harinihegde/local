@@ -1,0 +1,41 @@
+{
+  "kept_feature_cols": [
+    "delta_count",
+    "speed_std",
+    "flow_x",
+    "flow_y",
+    "flow_magnitude",
+    "accel_mean",
+    "flow_divergence",
+    "compression",
+    "zone_inflow",
+    "zone_outflow",
+    "density_sm",
+    "delta_count_sm",
+    "speed_mean_sm",
+    "speed_std_sm",
+    "flow_x_sm",
+    "flow_y_sm",
+    "flow_magnitude_sm",
+    "accel_mean_sm",
+    "flow_divergence_sm",
+    "compression_sm",
+    "spatial_entropy_sm",
+    "zone_inflow_sm",
+    "zone_outflow_sm"
+  ],
+  "pruned_cols": [
+    "count",
+    "density",
+    "speed_mean",
+    "spatial_entropy",
+    "count_sm"
+  ],
+  "corr_threshold": 0.95,
+  "normalization": "StandardScaler (z-score), fit on train split only",
+  "scaler_path": "outputs/avenue/features/scaler.json",
+  "frame_dims": "640x360",
+  "native_fps": 25.0,
+  "zones": "3x2 (6 zones)",
+  "tracker": "min_len=5 max_age=25 q_vel=0.001"
+}

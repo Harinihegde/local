@@ -1,0 +1,95 @@
+{
+  "scene1": {
+    "held_out_scene": "scene1",
+    "GradientBoosting_default": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 9,
+      "tn": 1172,
+      "fn": 30
+    },
+    "GradientBoosting_tuned": {
+      "threshold": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 9,
+      "tn": 1172,
+      "fn": 30
+    },
+    "RandomForest_default": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 7,
+      "tn": 1174,
+      "fn": 30
+    }
+  },
+  "scene2": {
+    "held_out_scene": "scene2",
+    "GradientBoosting_default": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 3178,
+      "fn": 90
+    },
+    "GradientBoosting_tuned": {
+      "threshold": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 3178,
+      "fn": 90
+    },
+    "RandomForest_default": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 3178,
+      "fn": 90
+    }
+  },
+  "scene3": {
+    "held_out_scene": "scene3",
+    "GradientBoosting_default": {
+      "precision": 0.013386880856760375,
+      "recall": 0.2222222222222222,
+      "f1": 0.025252525252525252,
+      "tp": 10,
+      "fp": 737,
+      "tn": 1226,
+      "fn": 35
+    },
+    "GradientBoosting_tuned": {
+      "threshold": 0.4,
+      "precision": 0.014705882352941176,
+      "recall": 0.26666666666666666,
+      "f1": 0.027874564459930314,
+      "tp": 12,
+      "fp": 804,
+      "tn": 1159,
+      "fn": 33
+    },
+    "RandomForest_default": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 93,
+      "tn": 1870,
+      "fn": 45
+    }
+  }
+}

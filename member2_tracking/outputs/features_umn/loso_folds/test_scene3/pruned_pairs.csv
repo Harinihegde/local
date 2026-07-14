@@ -1,0 +1,7 @@
+dropped,kept,abs_corr,note
+count,density,0.9999999999999994,
+speed_mean,flow_magnitude,0.9644857896376653,
+density,spatial_entropy,0.9590799046049103,
+spatial_entropy,count_sm,0.9591207885085573,
+count_sm,density_sm,0.9999999999999951,
+flow_divergence,flow_divergence_sm,0.958767619896459,

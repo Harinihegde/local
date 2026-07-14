@@ -1,0 +1,69 @@
+# Spatial Analysis & Risk Assessment — UMN version
+# Frame specifications — CORRECTED to UMN's real size (was 640x360, UCSD/other-dataset sized)
+frame:
+  width: 320
+  height: 240
+
+# Grid configuration
+# grid.size = pixel width of each column cell = frame_width / cols = 320/4 = 80
+# (was 160, correct only for the old, wrong 640-wide setting)
+grid:
+  size: 80
+  rows: 3
+  cols: 4
+
+# Detection thresholds
+# crawling_height scaled by the height change: 75 * (240/360) = 50
+# (a person's real height in pixels shrinks proportionally with frame height)
+thresholds:
+  crawling_height: 50
+  overcrowding: 6      # people-per-cell count — NOT pixel-based, unchanged
+  zone_imbalance: 0.70 # a ratio — unchanged
+  hotspot: 5           # people-per-cell count — unchanged
+
+# Density classification — total person COUNTS, not pixel-based, unchanged
+density:
+  low: 15
+  medium: 40
+
+# Risk scoring weights — unchanged (not resolution-dependent)
+risk_weights:
+  lstm: 0.4
+  spatial: 0.3
+  density: 0.2
+  size: 0.1
+
+# Risk level thresholds
+# Tested against real UMN panic labels (not guessed):
+#   High=0.25 — a balanced middle ground (roughly half of alerts are real
+#   panic, catches about half of all real danger). High=0.20 catches more
+#   danger (88%) but with more false alarms; chose 0.25 for fewer false
+#   alarms per user preference.
+#   Critical=0.45 — best-scoring cutoff clearly above High, for the most
+#   severe moments specifically.
+risk_levels:
+  critical: 0.45
+  high: 0.25
+  medium: 0.10
+
+# Zone mapping
+# boundaries recomputed for 320-wide frame, split into 3 equal thirds:
+# 320/3 = 106.67 -> [0,107], [107,213], [213,320]
+# (was [0,213],[213,426],[426,640] — correct only for the old 640-wide setting)
+zones:
+  mapping:
+    0: LEFT
+    1: LEFT
+    2: CENTER
+    3: RIGHT
+  boundaries:
+    left: [0, 107]
+    center: [107, 213]
+    right: [213, 320]
+
+# Paths
+paths:
+  detections: "data/detections/test_detections.json"
+  features: "data/tracking/"
+  predictions: "data/predictions/anomaly_results.json"
+  output: "data/final_outputs/"

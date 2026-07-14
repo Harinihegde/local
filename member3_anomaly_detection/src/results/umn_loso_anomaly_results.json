@@ -1,0 +1,53 @@
+{
+  "scene1": {
+    "held_out_scene": "scene1",
+    "train_scenes": [
+      "scene2",
+      "scene3"
+    ],
+    "n_features": 144,
+    "threshold": 1.8983708762440037,
+    "precision": 0.56,
+    "recall": 0.34890965732087226,
+    "f1": 0.42994241842610365,
+    "auc": 0.8088842946029379,
+    "tp": 112,
+    "fp": 88,
+    "tn": 1015,
+    "fn": 209
+  },
+  "scene2": {
+    "held_out_scene": "scene2",
+    "train_scenes": [
+      "scene1",
+      "scene3"
+    ],
+    "n_features": 144,
+    "threshold": 2.4060213753593462,
+    "precision": 1.0,
+    "recall": 0.004748338081671415,
+    "f1": 0.00945179584120983,
+    "auc": 0.30618747840607186,
+    "tp": 5,
+    "fp": 0,
+    "tn": 3062,
+    "fn": 1048
+  },
+  "scene3": {
+    "held_out_scene": "scene3",
+    "train_scenes": [
+      "scene1",
+      "scene2"
+    ],
+    "n_features": 132,
+    "threshold": 1.1384080153288643,
+    "precision": 0.31525784157363107,
+    "recall": 0.9251170046801872,
+    "f1": 0.47026169706582077,
+    "auc": 0.5977964118564743,
+    "tp": 593,
+    "fp": 1288,
+    "tn": 184,
+    "fn": 48
+  }
+}

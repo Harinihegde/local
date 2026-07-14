@@ -1,0 +1,18 @@
+{
+  "ucsd_test": {
+    "dataset": "UCSD Test",
+    "total_frames": 12031,
+    "anomalies_detected": 2812,
+    "anomaly_rate": 0.23372953204222424,
+    "mean_score": 1.0119187751221086,
+    "std_score": 0.5880150672526321,
+    "threshold": 1.1104165386494074
+  },
+  "avenue_test": null,
+  "ensemble_config": {
+    "n_models": 3,
+    "sequence_length": 30,
+    "latent_dim": 8,
+    "n_features": 11
+  }
+}

@@ -1,0 +1,34 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Member 2 — Configuration
+# All tunable parameters live here. No magic numbers in source code.
+# ─────────────────────────────────────────────────────────────────────────────
+
+data:
+  # train_json: "/Users/harinihegde/Desktop/stampede-detection-system-main/detection_data/train_detections.json"
+  train_json: "/Users/harinihegde/Downloads/stampede-detection-system-main/detection_data/train_detections.json"
+  test_json:  "/Users/harinihegde/Downloads/stampede-detection-system-main/detection_data/test_detections.json"
+  # output_dir: "outputs/features"
+  # output_dir: "outputs/ped1_features"
+  output_dir: "outputs/features"
+  # viz_dir:    "outputs/visualizations"
+  viz_dir:    "outputs/visualizations"
+
+
+frame:
+  width:  640
+  height: 640
+
+zones:
+  left:   [4,   102, 121, 226]
+  center: [121, 102, 238, 226]
+  right:  [238, 102, 354, 226]
+
+tracker:
+  iou_threshold:      0.08  # minimum IoU to match a detection to a track
+  max_missing_frames: 8      # frames a track survives without a match
+  min_track_length:   3      # tracks shorter than this are noise
+  conf_threshold:     0.80   # ignore detections below this confidence
+
+features:
+  smoothing_window: 5        # rolling-mean window size (frames)
+  speed_clip:       5.0     # hard upper bound on speed (px/frame)

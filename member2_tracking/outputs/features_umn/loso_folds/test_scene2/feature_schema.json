@@ -1,0 +1,43 @@
+{
+  "kept_feature_cols": [
+    "delta_count",
+    "speed_mean",
+    "speed_std",
+    "flow_x",
+    "flow_y",
+    "flow_magnitude",
+    "accel_mean",
+    "flow_divergence",
+    "compression",
+    "zone_inflow",
+    "zone_outflow",
+    "density_sm",
+    "delta_count_sm",
+    "speed_mean_sm",
+    "speed_std_sm",
+    "flow_x_sm",
+    "flow_y_sm",
+    "flow_magnitude_sm",
+    "accel_mean_sm",
+    "flow_divergence_sm",
+    "compression_sm",
+    "spatial_entropy_sm",
+    "zone_inflow_sm",
+    "zone_outflow_sm"
+  ],
+  "pruned_cols": [
+    "count",
+    "density",
+    "spatial_entropy",
+    "count_sm"
+  ],
+  "corr_threshold": 0.95,
+  "normalization": "StandardScaler (z-score), fit on this fold's train videos only",
+  "train_videos": [
+    "scene1",
+    "scene3"
+  ],
+  "test_videos": [
+    "scene2"
+  ]
+}

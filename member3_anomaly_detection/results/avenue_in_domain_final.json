@@ -1,0 +1,23 @@
+{
+  "approach": "Avenue In-Domain (50% train / 25% finetune / 25% test)",
+  "metrics": {
+    "accuracy": 0.32167280378748025,
+    "precision": 0.3135480436518499,
+    "recall": 1.0,
+    "f1_score": 0.4774062816616008,
+    "auc_roc": 0.38500073760818254,
+    "threshold": 0.12095312034884889
+  },
+  "dataset_splits": {
+    "train": 7662,
+    "finetune": 3831,
+    "test": 3831
+  },
+  "config": {
+    "seq_length": 30,
+    "zones": 6,
+    "features_per_zone": 11,
+    "train_epochs": 40,
+    "finetune_epochs": 20
+  }
+}

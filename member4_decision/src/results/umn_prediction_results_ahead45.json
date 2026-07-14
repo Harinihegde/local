@@ -1,0 +1,95 @@
+{
+  "scene1": {
+    "held_out_scene": "scene1",
+    "GradientBoosting_default": {
+      "precision": 0.9791666666666666,
+      "recall": 0.5222222222222223,
+      "f1": 0.6811594202898551,
+      "tp": 47,
+      "fp": 1,
+      "tn": 1120,
+      "fn": 43
+    },
+    "GradientBoosting_tuned": {
+      "threshold": 0.5,
+      "precision": 0.9791666666666666,
+      "recall": 0.5222222222222223,
+      "f1": 0.6811594202898551,
+      "tp": 47,
+      "fp": 1,
+      "tn": 1120,
+      "fn": 43
+    },
+    "RandomForest_default": {
+      "precision": 1.0,
+      "recall": 0.14444444444444443,
+      "f1": 0.2524271844660194,
+      "tp": 13,
+      "fp": 0,
+      "tn": 1121,
+      "fn": 77
+    }
+  },
+  "scene2": {
+    "held_out_scene": "scene2",
+    "GradientBoosting_default": {
+      "precision": 0.7058823529411765,
+      "recall": 0.044444444444444446,
+      "f1": 0.08362369337979095,
+      "tp": 12,
+      "fp": 5,
+      "tn": 2993,
+      "fn": 258
+    },
+    "GradientBoosting_tuned": {
+      "threshold": 0.15,
+      "precision": 0.6538461538461539,
+      "recall": 0.1259259259259259,
+      "f1": 0.2111801242236025,
+      "tp": 34,
+      "fp": 18,
+      "tn": 2980,
+      "fn": 236
+    },
+    "RandomForest_default": {
+      "precision": 1.0,
+      "recall": 0.007407407407407408,
+      "f1": 0.014705882352941176,
+      "tp": 2,
+      "fp": 0,
+      "tn": 2998,
+      "fn": 268
+    }
+  },
+  "scene3": {
+    "held_out_scene": "scene3",
+    "GradientBoosting_default": {
+      "precision": 0.07692307692307693,
+      "recall": 0.8449612403100775,
+      "f1": 0.1410090556274256,
+      "tp": 109,
+      "fp": 1308,
+      "tn": 561,
+      "fn": 20
+    },
+    "GradientBoosting_tuned": {
+      "threshold": 0.5,
+      "precision": 0.07692307692307693,
+      "recall": 0.8449612403100775,
+      "f1": 0.1410090556274256,
+      "tp": 109,
+      "fp": 1308,
+      "tn": 561,
+      "fn": 20
+    },
+    "RandomForest_default": {
+      "precision": 0.05459770114942529,
+      "recall": 0.14728682170542637,
+      "f1": 0.07966457023060797,
+      "tp": 19,
+      "fp": 329,
+      "tn": 1540,
+      "fn": 110
+    }
+  }
+}

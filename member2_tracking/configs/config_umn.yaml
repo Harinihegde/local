@@ -1,0 +1,34 @@
+data:
+  detection_train: /Users/harinihegde/Desktop/STAMPEDE-DETECTION-SYSTEM-MAIN_TEMP/detection_data/umn_detections.json
+  detection_test: /Users/harinihegde/Desktop/STAMPEDE-DETECTION-SYSTEM-MAIN_TEMP/detection_data/umn_detections.json  # same file — LOSO splits by scene, not by file
+  output_features: outputs/features_umn
+  output_tracks: outputs/tracks_umn
+frame:
+  # UMN true specs, verified against multiple published sources:
+  # 320x240 resolution, 30fps, stationary camera (Mahadevan et al.; Direkoglu et al.;
+  # "A Survey on Deep Learning Techniques for Video Anomaly Detection", arXiv:2009.14146).
+  # Frame counts per scene (1453 / 4144 / 2142) match our own detection JSON exactly,
+  # confirming this is the correct dataset identification.
+  width: 320
+  height: 240
+  native_fps: 30.0
+zones:
+  # 2x3 grid (cols x rows) -> 6 zones covering 320x240
+  cols: 3
+  rows: 2
+tracker:
+  min_track_len: 3          # discard tracks shorter than this (Section 3.6)
+  max_age: 10               # frames before a track is dropped
+  min_iou: 0.2              # IoU threshold for matching
+  max_dist: 50.0            # max pixel distance for Kalman gate
+  # NOTE: tuned in the context of 360-wide frames (UCSD). UMN is 320 wide (~11% narrower).
+  # Not yet verified whether this needs adjusting for UMN — flagged as unknown, left as-is.
+features:
+  smoothing_window: 5       # rolling mean window (frames)
+  corr_threshold: 0.95      # drop one of a pair if |r| >= this (Section 3.7)
+split:
+  mode: loso                # leave-one-scene-out — required since UMN has
+                             # only 3 independent panic events (one per scene);
+                             # a single fixed train/test split isn't statistically
+                             # meaningful. See Member 4's findings.
+  scenes: [scene1, scene2, scene3]

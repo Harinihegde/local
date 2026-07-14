@@ -1,0 +1,5 @@
+dropped,kept,abs_corr,note
+count,density,0.9999999999999934,
+density,count_sm,0.9762132868731132,
+count_sm,density_sm,0.999999999999998,
+spatial_entropy,spatial_entropy_sm,0.9693127762882374,

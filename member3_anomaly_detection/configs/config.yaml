@@ -1,0 +1,27 @@
+paths:
+  train_csv: "path/to/ucsd/train/*.csv"
+  test_ucsd_csv: "path/to/ucsd/test/*.csv"
+  test_avenue_csv: "path/to/avenue/test/*.csv"
+  models_dir: "./models"
+  results_dir: "./results"
+
+model:
+  sequence_length: 30
+  latent_dim: 8
+  threshold_percentile: 95
+
+training:
+  epochs: 50
+  batch_size: 32
+  validation_split: 0.2
+  patience: 5
+
+hyperparameter_search:
+  sequence_lengths: [15, 20, 30, 40]
+  latent_dims: [4, 8, 16, 32]
+  threshold_percentiles: [80, 85, 90, 95]
+  dropouts: [0, 0.1, 0.2, 0.3]
+
+ensemble:
+  n_models: 3
+  voting_threshold: 0.5

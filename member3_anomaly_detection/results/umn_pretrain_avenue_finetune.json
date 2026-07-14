@@ -1,0 +1,21 @@
+{
+  "approach": "UMN Pretrain + Avenue Finetune",
+  "metrics": {
+    "accuracy": 0.266141387612169,
+    "precision": 0.2664913434144203,
+    "recall": 0.9950900163666121,
+    "f1_score": 0.42039757994814175,
+    "auc_roc": 0.45901672211037853,
+    "threshold": 0.5379898092208523
+  },
+  "config": {
+    "pretrain_data": "UMN (unsupervised)",
+    "finetune_data": "Avenue 70% (supervised)",
+    "test_data": "Avenue 30% (with labels)",
+    "seq_length": 30,
+    "zones": 6,
+    "features_per_zone": 11,
+    "pretrain_epochs": 30,
+    "finetune_epochs": 20
+  }
+}
