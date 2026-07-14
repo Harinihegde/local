@@ -29,3 +29,6 @@ logs/
 detection_data/
 member4_results/
 models
+
+# Crowd Panic generated experiment artifacts
+crowd_panic_dataset/outputs/
